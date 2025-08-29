@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me! | Isaac</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <img src="https://media.discordapp.net/attachments/1322301342403924071/1410796981760295032/e5aeb77a06995f25c24962ea3cfd62d8.png?ex=68b25293&is=68b10113&hm=287f4d8d5a0986f50841c62c4e2c8d793154e8f9ed308a77c22861372fdb06d8&=&format=webp&quality=lossless" alt="Avatar" class="avatar">
+        <h1><span class="icon">💖</span> ABOUT ME! <span class="icon">💖</span></h1>
+        <p class="subtitle">ISAAC!!!<span class="pronouns">(he/him)</span></p>
+    </header>
+    <div class="divider"></div>
+    <div class="info-box">
+            <p>I'm Mexican</p>
+            <p>I play a lot of games, and I'm good at them.</p>
+            <p>In love horror games, mainly the broken script on Minecraft Java</p>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">💌</span> Socials</div>
+        <div class="chapter-content">
+            <ul>
+                <li><b>Discord:</b> glitchederrors</li>
+                <li><b>Spotify:</b> 3rrers</li>
+                <li><b>Steam:</b> 3rrers3</li>
+                <li><b>Roblox:</b> theducksong73</li>
+                <li><b>Youtube:</b> Skyezz (Glitched-brh)</li>
+                <li><b>OSU!:</b> Glitchin stitch</li>
+            </ul>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">🕹️</span> Games</div>
+        <div class="chapter-content">
+            <li><a href="https://playvalorant.com/en-us/" target="_blank">Valorant</a></li>
+            <li><a href="https://store.steampowered.com/app/1172470/Apex_Legends/" target="_blank">Apex Legends</a></li>
+            <li><a href="https://store.steampowered.com/app/1229490/ULTRAKILL/" target="_blank">Ultrakill</a></li>
+            <li><a href="https://store.steampowered.com/app/3241660/REPO/" target="_blank">Repo</a></li>
+            <li><a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank">Lethal Company</a></li>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">🎬</span> Movies</div>
+        <div class="chapter-content">
+            <li><a href="https://www.imdb.com/title/tt9362722/?ref_=fn_all_ttl_1" target="_blank">Spider-Verse</a></li>
+            <li><a href="https://www.imdb.com/title/tt2091256/?ref_=fn_all_ttl_1" target="_blank">Captain Underpants</a></li>
+            <li><a href="https://www.imdb.com/title/tt3915174/?ref_=fn_all_ttl_2" target="_blank">Puss in Boots: Last Wish</a></li>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">📺</span> Shows</div>
+        <div class="chapter-content">
+            <li><a href="https://www.imdb.com/title/tt1942683/?ref_=fn_all_ttl_1" target="_blank">Amazing World of Gumball</a></li>
+            <li><a href="https://www.imdb.com/title/tt15599734/?ref_=fn_all_ttl_1" target="_blank">Murder Drones</a></li>
+            <li><a href="https://www.imdb.com/title/tt11990574/?ref_=fn_all_ttl_1" target="_blank">Lackadaisy</a></li>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">🎵</span> Songs</div>
+        <div class="chapter-content">
+            <li><a href="https://youtu.be/ZBFhBPo-yqc?feature=shared" target="_blank">Give a Little</a></li>
+            <li><a href="https://youtu.be/lNoUP579nQ8?feature=shared" target="_blank">Bite Me</a></li>
+            <li><a href="https://youtu.be/xHffjNbWmig?feature=shared" target="_blank">Honey I'm Home</a></li>
+            <li><a href="https://youtu.be/zdryL4deXjU?feature=shared" target="_blank">Limbo</a></li>
+            <li><a href="https://youtu.be/6Wp9Hpr6LIc?feature=shared" target="_blank">Miss You</a></li>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">⭐</span> Fave Youtuber</div>
+        <div class="chapter-content">
+            <p><a href="https://www.youtube.com/@3fs" target="_blank">3FS</a> (HE'S MY KING)</p>
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="chapter-heading"><span class="icon">🏆</span> OSU! Rank</div>
+        <div class="chapter-content">
+            <p><a href="https://osu.ppy.sh/users/37710059" target="_blank">OSU! Profile</a></p>
+        </div>
+    </div>
+</div>
+Made by GhostHasGone
+
+<!-- Audio player (hidden) -->
+<audio id="bg-music" src="assets/music.mp3" autoplay></audio>
+
+<!-- Mute button -->
+<button id="mute-btn" aria-label="Mute/unmute music">
+    <span id="mute-icon">🔊</span>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up audio
+    const audio = document.getElementById('bg-music');
+    audio.volume = 0.25;
+
+    // Try to play immediately
+    audio.play().catch(() => {
+        // If autoplay is blocked, play on first user interaction
+        const resumeAudio = () => {
+            audio.play();
+            document.removeEventListener('click', resumeAudio);
+        };
+        document.addEventListener('click', resumeAudio);
+    });
+
+    // Mute button logic
+    const muteBtn = document.getElementById('mute-btn');
+    const muteIcon = document.getElementById('mute-icon');
+    muteBtn.addEventListener('click', function() {
+        audio.muted = !audio.muted;
+        muteIcon.textContent = audio.muted ? '🔇' : '🔊';
+    });
+});
+document.querySelectorAll('.chapter-heading').forEach(heading => {
+    heading.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isOpen = heading.classList.contains('open');
+        // Close all chapters except the one clicked
+        document.querySelectorAll('.chapter-heading').forEach(h => {
+            h.classList.remove('open');
+            h.nextElementSibling.style.maxHeight = null;
+        });
+        if (!isOpen) {
+            heading.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+});
+</script>
+</body>
+</html>
